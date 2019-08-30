@@ -1,0 +1,50 @@
+<div class="container" *ngIf="project">
+  <h2>{{title}}</h2>
+  <div class="message success" *ngIf="status == 'success'">
+    El proyecto se ha creado correctamente puedes <a [routerLink]="['/proyecto', saveProject._id]">verlo aquí</a>
+  </div>
+  <div class="message failed" *ngIf="!status == 'failed'">
+    El proyecto no se ha creado correctamente
+  </div>
+  <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+    <div>
+      <label for="name">Nombre</label>
+      <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" required>
+      <span class="form-error" *ngIf="name.touched && !name.valid">Este campo es obligatorio</span>
+    </div>
+
+    <div>
+      <label for="description">Descripción</label>
+      <textarea name="description" #description="ngModel" [(ngModel)]="project.description" required></textarea>
+      <span class="form-error" *ngIf="description.touched && !description.valid">Este campo es obligatorio</span>
+    </div>
+    <div>
+      <label for="category">Categoria</label>
+      <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category" required>
+      <span class="form-error" *ngIf="category.touched && !category.valid">Este campo es obligatorio</span>
+    </div>
+    <div>
+      <label for="year">Año</label>
+      <input type="number" name="year" #year="ngModel" [(ngModel)]="project.year">
+    </div>
+    <div>
+      <label for="langs">Lenguajes</label>
+      <input type="text" name="langs" #langs="ngModel" [(ngModel)]="project.langs" required>
+      <span class="form-error" *ngIf="langs.touched && !langs.valid">Este campo es obligatorio</span>
+    </div>
+    <div>
+      <label for="image">Imagen</label>
+      <div *ngIf="project.image">
+        <span class="image" *ngIf="project.image" style="float: none">
+          <img src="{{url+'/get-image/'+ project.image}}" style="width: 100px">
+        </span>
+      </div>
+      <br>
+      <br>
+      <input type="file" name="image" #image="ngModel" [(ngModel)]="project.image" (change)="fileChangeEvent($event)">
+      <span class="form-error" *ngIf="image.touched && !image.valid">Este campo es obligatorio</span>
+    </div>
+
+    <input type="submit" value="Enviar" [disabled]="!projectForm.form.valid">
+  </form>
+</div>

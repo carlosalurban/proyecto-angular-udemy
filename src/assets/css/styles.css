@@ -1,0 +1,303 @@
+@font-face {
+    font-family: "yanone";
+    src: url("../fonts/yanone.ttf");
+}
+
+@font-face {
+    font-family: "finger";
+    src: url("../fonts/finger.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0px;
+}
+
+body {
+    font-family: "yanone", "Arial", "Helvetica";
+    font-size: 20px;
+    background: url("../img/pattern.png");
+    background-attachment: fixed;
+}
+
+.clearfix {
+    float: none;
+    clear: both;
+}
+
+/* NAVBAR*/
+
+header {
+    display: block;
+    width: 100%;
+    height: 90px;
+    background: rgba(3, 169, 244, 0.75);
+    position: fixed;
+    text-transform: uppercase;
+}
+
+header ul {
+    display: block;
+    width: 45%;
+    height: inherit;
+    margin: 0px auto;
+    margin-top: -3px;
+}
+
+header ul li {
+    display: inline-block;
+    margin: 0px auto;
+    text-align: center;
+    line-height: 88px;
+}
+
+header ul li a {
+    display: block;
+    padding-right: 20px;
+    padding-left: 20px;
+    height: inherit;
+    text-decoration: none;
+    color: white;
+    transition: all 300ms;
+}
+
+header a:hover, .actived {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+header #logo a:hover {
+    background: transparent;
+}
+
+#logo {
+    font-family: "finger";
+    font-size: 30px;
+}
+
+#logo a {
+    transition: color 500ms, transform 500ms;
+}
+
+#logo a:hover {
+    background: transparent;
+    color: black;
+    transform: scale(1.50, 1.50);
+}
+
+/*Container*/
+
+#content {
+    min-height: 600px;
+    height: auto;
+    width: 75%;
+    margin: 0 auto;
+    box-shadow: 0px 0px 40px black;
+    border-left: 1px solid #b7b7b7;
+    border-right: 1px solid #b7b7b7;
+    background: rgba(255, 255, 255, 0.7);
+    padding-top: 120px;
+}
+
+/*footer*/
+
+footer {
+    width: 75%;
+    margin: 0px auto;
+    padding-top: 15px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/*ABOUT*/
+
+#title {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 70px;
+    margin-top: 20px;
+}
+
+#title h1 {
+    font-family: "finger";
+    font-size: 60px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+#title h2 {
+    font-size: 25px;
+    color: gray;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+article.about {
+    width: 70%;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    font-size: 23px;
+}
+
+.about h2 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.about p {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    text-align: justify;
+}
+
+/*Seccion formulario*/
+
+.container {
+    padding: 50px;
+    padding-top: 10px;
+}
+
+.container .image {
+    float: left;
+    width: 47%;
+}
+
+.container .data {
+    float: left;
+    width: 48%;
+    margin-left: 25px;
+}
+
+.container .image img {
+    float: left;
+    width: 100%;
+}
+
+.container h2 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+form {
+    width: 80%;
+}
+
+form label {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+form input[type="text"], form input[type="number"], form input[type="email"], form textarea {
+    width: 40%;
+    padding: 5px;
+}
+
+form button, form input[type="submit"], .button-edit, .button-delete {
+    display: block;
+    font-size: 17px;
+    padding: 5px;
+    margin-top: 15px;
+    color: white;
+    background-color: rgba(3, 169, 244, 1);
+    border: 1px solid rgb(20, 85, 116);
+    cursor: pointer;
+}
+
+.button-edit, .button-delete {
+    width: 30%;
+    text-align: center;
+    float: left;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.button-edit {
+    background-color: orange;
+    border: none;
+}
+
+.button-delete {
+    background-color: red;
+    border: none;
+}
+
+form button:hover, form input[type="submit"]:hover {
+    background-color: rgba(3, 169, 244, 0.7);
+    border: 1px solid rgb(20, 85, 116);
+}
+
+form input[disabled] {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.form-error {
+    padding: 3px;
+    background: red;
+    color: white;
+    font-size: 13px;
+    margin-left: 5px;
+}
+
+.message {
+    width: 50%;
+    padding: 5px;
+    border: 1px solid #eee
+}
+
+.success {
+    background-color: green;
+    color: white;
+}
+
+.success a {
+    color: white;
+}
+
+.failed {
+    background-color: red;
+    color: white;
+}
+
+/*Proyectos*/
+
+.project {
+    list-style: none;
+    display: block;
+    float: left;
+    width: 28%;
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+}
+
+.project .image {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+}
+
+.project img {
+    width: 100%;
+}
+
+.project a {
+    text-decoration: none;
+    color: black;
+}
+
+.confirm {
+    display: block;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.galeria {
+    background-color: lightblue;
+    height: 400px;
+}
